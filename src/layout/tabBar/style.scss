@@ -1,0 +1,34 @@
+.tabBar-box {
+    height: 75px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .tabBar {
+        height: 50px;
+        background: #1F1F36;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        a {
+            color: #5A5A6C;
+            &.active {
+                color: #fff;
+            }
+        }
+        &-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        color: #bbb;
+        .am-icon {
+            width: 16px;
+            height: 16px;
+            color: #5A5A6C;
+        }
+    }
+}

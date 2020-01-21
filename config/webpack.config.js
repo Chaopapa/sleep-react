@@ -113,7 +113,7 @@ module.exports = function(webpackEnv) {
             postcssNormalize(),
             require('postcss-pxtorem')({
               rootValue : 75,
-              selectorBlackList  : ['.border'], //过滤
+              selectorBlackList  : ['.border','.tabBar-box','.App-container'], //过滤
               propList   : ['*'],
             })
           ],
@@ -306,6 +306,8 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        //配置路径别名
+        '@':path.resolve(__dirname,'../src')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -390,6 +392,8 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  //自动导入antdmobile的样式
+                  ["import", { libraryName: "antd-mobile", style: "css" }]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
